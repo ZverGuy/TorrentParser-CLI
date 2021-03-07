@@ -1,0 +1,2 @@
+https://www.virustotal.com/gui/file/195797d43cc83224dfcddd1388b2794beb9d783415886aa93954aa0d70a4cb12/detection - exe
+https://www.virustotal.com/gui/file/4183655de0b44e42b1a177c86a0042376aea2025af9923eae147e74de2fad7e8/detection - dll

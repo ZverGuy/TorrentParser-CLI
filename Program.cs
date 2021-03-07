@@ -17,15 +17,27 @@ namespace TorrentParser_CLI
             Console.WriteLine("Напишите поисковый запрос в TorLook!!!");
 
             string Search = Console.ReadLine();
+
+
             Console.WriteLine("Введмте Кол-во результатов");
+
+
             string SearchCount = Console.ReadLine();
+
+
             Console.WriteLine("Введмте Задержку (в МС)");
+
+
             string Delay = Console.ReadLine();
+
             TorrentParser torrentParser = new TorrentParser();
+
             string LinkedUrl = torrentParser.FromNameToUrl("https://torlook.info/", Search);
-            // string pseudourl = "https://torlook.info/Minecraft";
-            torrentParser.AddXmlNamespace(LinkedUrl);
+
+            
+
             var doc = torrentParser.GetHtmlDocFromUrl(LinkedUrl);
+
             var collection = torrentParser.GetResultDivCollection(doc);
 
             int SearchInt = int.Parse(SearchCount);
@@ -37,8 +49,8 @@ namespace TorrentParser_CLI
                 var name = doc.DocumentNode.SelectSingleNode("//*[@id=\"resultsDiv\"]/*[contains(@class, \"webResult item\")][" + i + "]/p/a").InnerText;
                 var UrlToTorrent = doc.DocumentNode.SelectSingleNode("//*[@id=\"resultsDiv\"]/*[contains(@class, \"webResult item\")][" + i + "]/p/a").Attributes["href"].Value;
                 var size = doc.DocumentNode.SelectSingleNode("//*[@id=\"resultsDiv\"]/*[contains(@class, \"webResult item\")][" + i + "]/*[@class=\"h2\"]/*[@class=\"webResultTitle\"]/*[@class=\"size\"]").InnerText;
-                var seeders = doc.DocumentNode.SelectSingleNode("//*[@id=\"resultsDiv\"]/*[contains(@class, \"webResult item\")][2]/*[@class=\"h2\"]/*[@class=\"webResultTitle\"]/*[@class=\"torstat\"]/*[@class=\"seeders\"]").InnerText;
-                var leechers = doc.DocumentNode.SelectSingleNode("//*[@id=\"resultsDiv\"]/*[contains(@class, \"webResult item\")][2]/*[@class=\"h2\"]/*[@class=\"webResultTitle\"]/*[@class=\"torstat\"]/*[@class=\"leechers\"]").InnerText;
+                var seeders = doc.DocumentNode.SelectSingleNode("//*[@id=\"resultsDiv\"]/*[contains(@class, \"webResult item\")][" + i + "]/*[@class=\"h2\"]/*[@class=\"webResultTitle\"]/*[@class=\"torstat\"]/*[@class=\"seeders\"]").InnerText;
+                var leechers = doc.DocumentNode.SelectSingleNode("//*[@id=\"resultsDiv\"]/*[contains(@class, \"webResult item\")][" + i + "]/*[@class=\"h2\"]/*[@class=\"webResultTitle\"]/*[@class=\"torstat\"]/*[@class=\"leechers\"]").InnerText;
                 Console.WriteLine("Name: " + name);
                 Console.WriteLine("Url : " + UrlToTorrent);
                 Console.WriteLine("Size: " + size);
