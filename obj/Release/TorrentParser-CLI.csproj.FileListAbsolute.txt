@@ -1,0 +1,11 @@
+C:\Users\Max\source\repos\TorrentParser-CLI\bin\Release\TorrentParser-CLI.exe.config
+C:\Users\Max\source\repos\TorrentParser-CLI\bin\Release\TorrentParser-CLI.exe
+C:\Users\Max\source\repos\TorrentParser-CLI\bin\Release\TorrentParser-CLI.pdb
+C:\Users\Max\source\repos\TorrentParser-CLI\bin\Release\HtmlAgilityPack.dll
+C:\Users\Max\source\repos\TorrentParser-CLI\bin\Release\HtmlAgilityPack.pdb
+C:\Users\Max\source\repos\TorrentParser-CLI\bin\Release\HtmlAgilityPack.xml
+C:\Users\Max\source\repos\TorrentParser-CLI\obj\Release\TorrentParser-CLI.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\TorrentParser-CLI\obj\Release\TorrentParser-CLI.csproj.CopyComplete
+C:\Users\Max\source\repos\TorrentParser-CLI\obj\Release\TorrentParser-CLI.exe
+C:\Users\Max\source\repos\TorrentParser-CLI\obj\Release\TorrentParser-CLI.pdb
+C:\Users\Max\source\repos\TorrentParser-CLI\obj\Release\TorrentParser-CLI.csprojAssemblyReference.cache

@@ -30,14 +30,24 @@ public class TorrentParser : Object
 		return Collection;
     }
 	public string GetMagneUrlFromHtmlDoc(HtmlDocument doc, int index)
+	
     {
-		string datasrcformagneturl = doc.DocumentNode.SelectSingleNode("//*[@id=\"resultsDiv\"]/*[contains(@class, \"webResult item\")][" + index + "]/*[@class=\"h2\"]/*[@class=\"webResultTitle\"]/*[@class=\"magnet\"]/a").Attributes["data-src"].Value;
-		HtmlWeb web2 = new HtmlWeb();
-		string baseurlwithdatasrc = baseurl + datasrcformagneturl;
-		string rawmagnet = web2.Load(baseurlwithdatasrc).ParsedText;
-		Regex regex = new Regex("href='(.+.)'>");
-		string match = regex.Match(rawmagnet).ToString().Replace("href='", "").Replace("'>", "");
-		return match;
-	}
-		 
+
+
+		try
+		{
+			string datasrcformagneturl = doc.DocumentNode.SelectSingleNode("//*[@id=\"resultsDiv\"]/*[contains(@class, \"webResult item\")][" + index + "]/*[@class=\"h2\"]/*[@class=\"webResultTitle\"]/*[@class=\"magnet\"]/a").Attributes["data-src"].Value;
+			HtmlWeb web2 = new HtmlWeb();
+			string baseurlwithdatasrc = baseurl + datasrcformagneturl;
+			string rawmagnet = web2.Load(baseurlwithdatasrc).ParsedText;
+			Regex regex = new Regex("href='(.+.)'>");
+			string match = regex.Match(rawmagnet).ToString().Replace("href='", "").Replace("'>", "");
+			return match;
+		} catch(NullReferenceException)
+        {
+			return String.Empty;
+        }
+
+	} 
 }
+		 
